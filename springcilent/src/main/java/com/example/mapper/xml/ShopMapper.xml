@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.ShopMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.example.eneity.TblSafetyWork">
+        <id column="id" property="id" />
+        <result column="work_nam" property="workNam" />
+        <result column="work_explain" property="workExplain" />
+        <result column="risk_score" property="riskScore" />
+        <result column="level_id" property="levelId" />
+        <result column="management_dept" property="managementDept" />
+        <result column="management_person" property="managementPerson" />
+        <result column="del_flag" property="delFlag" />
+        <result column="use_flag" property="useFlag" />
+        <result column="create_id" property="createId" />
+        <result column="create_time" property="createTime" />
+        <result column="modified_id" property="modifiedId" />
+        <result column="modified_time" property="modifiedTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, work_name AS workName, work_explain AS workExplain, risk_score AS riskScore, level_id AS levelId, management_dept AS managementDept, management_person AS managementPerson, del_flag AS delFlag, use_flag AS useFlag, create_id AS createId, create_time AS createTime, modified_id AS modifiedId, modified_time AS modifiedTime, enter_id AS enterId
+    </sql>
+
+
+    <!--实现对于分心分析模型主页数据的查询-->
+    <select id="selectPageTblSafetyWorkVo" parameterType="com.hedian.platform.customer.work.vo.TblSafetyWorkVo"
+            resultType="com.hedian.platform.customer.work.vo.TblSafetyWorkVo">
+         select  * from  tbl_safety_work
+    </select>
+
+
+
+
+</mapper>
